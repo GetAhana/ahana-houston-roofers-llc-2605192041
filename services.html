@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
+  <title>Houston Roofers Services | Houston, TX</title>
+  <meta name="description" content="Houston Roofers services: repair, replacement, storm damage, commercial, gutters, inspections. Licensed roofing in Houston, TX. Free estimates." />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{--container-w:1100px;--brand-primary:#1E3A5F;--brand-dark:#0F1114;--brand-light:#F5F6F8;--brand-accent:#C45C26;--ink:#0E0E10}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',sans-serif;background:#fff;color:var(--brand-dark);overflow-x:hidden}
+    #sticky-header{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      background:rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      padding:0 clamp(1.25rem,3.2vw,2.75rem);
+      height:80px;
+      box-shadow:0 10px 28px rgba(0,0,0,.08);
+      border-bottom:1px solid rgba(0,0,0,.08);
+    }
+    #sticky-header .logo{
+      position:relative;z-index:2;flex-shrink:0;
+      font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.55rem;color:var(--ink);letter-spacing:-.01em;text-decoration:none;
+      display:inline-flex;align-items:center;gap:0.55rem
+    }
+    #sticky-header .logo .logo__accent{color:var(--brand-accent)}
+    #sticky-header .logo__img{display:block;height:40px;width:auto;max-width:min(200px,42vw);object-fit:contain}
+    #sticky-header .logo__wordmark{font-family:inherit;font-weight:inherit;font-size:inherit;letter-spacing:inherit;color:inherit}
+    .header-brand--text #sticky-header .logo__img{display:none !important}
+    .header-brand--text #sticky-header .logo__wordmark--beside{display:none !important}
+    .header-brand--image #sticky-header .logo__img{display:block}
+    .header-brand--image #sticky-header .logo__wordmark{display:none !important}
+    .header-brand--image-text #sticky-header .logo__img{display:block}
+    .header-brand--image-text #sticky-header .logo__wordmark--fallback{display:none !important}
+    .header-brand--image-text #sticky-header .logo__dot{display:none !important}
+    .header-brand--image-text #sticky-header .logo__wordmark--beside{display:inline;white-space:nowrap}
+    #sticky-header .header-nav-layer{
+      position:absolute;left:0;right:0;top:0;bottom:0;
+      display:flex;align-items:center;justify-content:center;
+      pointer-events:none;
+    }
+    #sticky-header .header-nav-layer nav{pointer-events:auto;max-width:min(920px,calc(100vw - 22rem))}
+    .nav-links{display:flex;gap:1.85rem;list-style:none;align-items:center;justify-content:center;flex-wrap:wrap}
+    .nav-links a{color:rgba(14,14,16,.78);font-size:.8rem;font-weight:900;text-transform:uppercase;letter-spacing:.10em;text-decoration:none;white-space:nowrap}
+    .nav-links a:hover{color:var(--brand-primary)}
+    .header-ctas{display:flex;align-items:center;gap:1rem;flex-wrap:nowrap;position:relative;z-index:2;flex-shrink:0;margin-left:auto}
+    .btn-call-now{
+      display:inline-flex;align-items:center;gap:.5rem;background:var(--brand-primary);color:#fff;
+      font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.03rem;padding:.62rem 1.2rem;border-radius:12px;text-decoration:none;white-space:nowrap
+    }
+    .btn-outline{
+      display:inline-flex;align-items:center;gap:.5rem;background:transparent;border:1px solid rgba(0,0,0,.16);
+      color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:.98rem;padding:.62rem 1.05rem;border-radius:12px;text-decoration:none;white-space:nowrap
+    }
+    #menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px;color:var(--ink)}
+    #menu-toggle svg{stroke:currentColor}
+    #mobile-menu{display:none;position:fixed;top:80px;left:0;right:0;background:rgba(255,255,255,.98);z-index:99;padding:1rem clamp(1.25rem,3.2vw,2.75rem);flex-direction:column;gap:1rem;border-bottom:1px solid rgba(0,0,0,.08)}
+    #mobile-menu a{color:rgba(14,14,16,.86);font-weight:900;text-transform:uppercase;letter-spacing:.1em;font-size:.9rem;text-decoration:none;padding:.6rem 0;border-bottom:1px solid rgba(0,0,0,.08)}
+    #mobile-menu.open{display:flex}
+    @media(max-width:860px){
+      #sticky-header .header-nav-layer{display:none}
+      .nav-links{display:none}
+      #menu-toggle{display:block}
+    }
+    main{padding:124px 1.5rem 5.5rem;background:#fff}
+    .container{max-width:var(--container-w);margin:0 auto;width:100%}
+    .kicker{font-size:.75rem;font-weight:900;text-transform:uppercase;letter-spacing:.18em;color:var(--brand-primary);margin-bottom:.5rem}
+    h1{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2.2rem,4.8vw,3.4rem);line-height:1.05}
+    h1 span{color:var(--brand-primary)}
+    p{margin-top:1rem;color:#4a5560;font-size:1.02rem;line-height:1.65;max-width:800px}
+    .svc-hub-section{margin-top:2.75rem}
+    .svc-hub-section:first-of-type{margin-top:2rem}
+    .svc-hub-section .kicker{margin-bottom:.35rem}
+    .svc-hub-section h2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(1.35rem,3vw,1.85rem);line-height:1.15;color:var(--brand-dark);margin:.35rem 0 0}
+    .svc-hub-section h2 span{color:var(--brand-primary)}
+    .svc-hub-section .section-lead{margin-top:.55rem;color:#5a6570;font-size:.98rem;line-height:1.65;max-width:720px}
+    .svc-priority-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:1.1rem;align-items:stretch}
+    @media(max-width:900px){.svc-priority-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:560px){.svc-priority-grid{grid-template-columns:1fr}}
+    .feature-ico{display:block;width:44px;height:44px;color:var(--brand-primary);margin-bottom:.5rem}
+    .feature-ico svg{width:100%;height:100%;display:block}
+    .feature-card h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.12rem;margin:0;color:#4a5d6e;line-height:1.25}
+    a.feature-card,a.card.feature-card{text-decoration:none;color:inherit}
+    .feature-card p{margin-top:.45rem;color:#5a6570;font-size:.93rem;line-height:1.55;flex:1;max-width:none}
+    .feature-lm{margin-top:auto;padding-top:.9rem;font-weight:800;font-size:.88rem;color:var(--brand-primary)}
+    a.feature-lm{text-decoration:none}
+    a.feature-lm:hover{text-decoration:underline}
+    .svc-add-more{margin-top:1.75rem;border:1px solid rgba(0,0,0,.1);border-radius:14px;background:var(--brand-light);padding:1.25rem 1.15rem 1.35rem}
+    .svc-add-more .lead{margin-top:.5rem;color:#5a6570;font-size:.95rem;line-height:1.65;max-width:none}
+    .sticky-svc-cta{position:fixed;bottom:0;left:0;right:0;z-index:90;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.75rem;padding:.75rem 1.25rem;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-top:1px solid rgba(0,0,0,.1);box-shadow:0 -10px 28px rgba(0,0,0,.1)}
+    .sticky-svc-cta a{display:inline-flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:.92rem;text-decoration:none;border-radius:10px;padding:.62rem 1.2rem}
+    .sticky-svc-primary{background:var(--brand-primary);color:#fff}
+    .sticky-svc-call{border:2px solid rgba(0,0,0,.12);color:var(--brand-dark);background:#fff}
+    .svc-more-h2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(1.2rem,2.8vw,1.65rem);margin:.35rem 0 0;color:var(--brand-dark)}
+    .svc-add-more .kicker{margin-bottom:.25rem}
+    .svc-additional-list{margin-top:1.15rem;padding-left:1.15rem;color:#4A4A4A;line-height:1.75;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:2rem;row-gap:.35rem}
+    @media(max-width:640px){.svc-additional-list{grid-template-columns:1fr}}
+    .svc-additional-list li{margin:0}
+    .card{background:var(--brand-light);border:1px solid rgba(0,0,0,.06);border-radius:12px;padding:1.6rem;display:flex;flex-direction:column;height:100%}
+    a.card.svc-detail-card{display:flex;flex-direction:column;height:100%;text-decoration:none;color:inherit;transition:border-color .2s,box-shadow .2s,transform .15s}
+    a.card.svc-detail-card:hover,a.card.svc-detail-card:focus-visible{border-color:var(--brand-primary);box-shadow:0 12px 28px rgba(0,0,0,.08);transform:translateY(-2px);outline:none}
+    .card h2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.35rem;margin-bottom:.4rem;color:#4a5d6e}
+    .card p{margin-top:.5rem;color:#6b7785;font-size:.95rem;line-height:1.65;flex:1}
+    footer{background:#0f0f10;color:rgba(255,255,255,.65);padding:3.5rem 1.5rem 2rem}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;max-width:var(--container-w);margin:0 auto}
+    .footer-logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.75rem;color:#fff;margin-bottom:.75rem}
+    .footer-logo span{color:var(--brand-accent)}
+    .footer-col h4{font-size:.75rem;font-weight:900;text-transform:uppercase;letter-spacing:.15em;color:#fff;margin-bottom:1rem}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+    .footer-col a{color:rgba(255,255,255,.55);text-decoration:none}
+    .footer-col a:hover{color:var(--brand-accent)}
+    .footer-bottom{max-width:var(--container-w);margin:2.5rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.75rem;font-size:.8rem}
+    @media(max-width:640px){.footer-grid{grid-template-columns:1fr;gap:2rem}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "provider":{"@type":"LocalBusiness","name":"Houston Roofers"},
+    "areaServed": ["Houston","Pearland","Sugar Land","Katy","The Woodlands"],
+    "serviceType":"Roofing Services"
+  }
+  </script>
+</head>
+<body class="header-brand--image-text">
+  <header id="sticky-header">
+    <a class="logo" href="index.html"><img class="logo__img" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&w=1200&q=80" alt="Houston Roofers" width="180" height="54" loading="lazy" decoding="async" /><span class="logo__wordmark logo__wordmark--fallback">Houston Roofers<span class="logo__accent logo__dot">.</span></span><span class="logo__wordmark logo__wordmark--beside">Houston Roofers</span></a>
+    <div class="header-nav-layer">
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="testimonials.html">Wall of Love</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li class="nav-dd">
+          <button type="button" class="nav-dd-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="nav-dd-sa-panel">Service Area <span class="nav-dd-caret" aria-hidden="true">▾</span></button>
+          <ul class="nav-dd-panel" id="nav-dd-sa-panel" role="menu">
+            <li role="none"><a role="menuitem" href="service-area.html">Coverage map &amp; list</a></li>
+            <li role="none"><a role="menuitem" href="location-1.html">Houston</a></li>
+            <li role="none"><a role="menuitem" href="location-2.html">Pearland</a></li>
+            <li role="none"><a role="menuitem" href="location-3.html">Sugar Land</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    </div>
+    <div class="header-ctas">
+      <a class="btn-outline" href="contact.html">Get Estimate</a>
+      <a class="btn-call-now" href="tel:+17135550198">Call Now</a>
+      <button type="button" id="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+      </button>
+    </div>
+  </header>
+  <nav id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="testimonials.html">Wall of Love</a>
+    <a href="about.html">About</a>
+    <a href="articles.html">Articles</a>
+    <div class="mobile-nav-dd" role="group" aria-label="Service area links">
+      <span class="mobile-nav-dd-label">Service Area</span>
+      <a href="service-area.html">Coverage map &amp; list</a>
+      <a href="location-1.html">Houston</a>
+      <a href="location-2.html">Pearland</a>
+      <a href="location-3.html">Sugar Land</a>
+    </div>
+    <a href="tel:+17135550198" style="color:var(--brand-primary)!important;">(713) 555-0198</a>
+  </nav>
+
+  <main>
+    <div class="container">
+      <div class="kicker">Services</div>
+      <h1>Services for <span>Houston</span> Homeowners</h1>
+      <p>Houston Roofers offers six core roofing and gutter services for residential and light commercial properties across Houston and nearby areas. Whether you're facing storm damage, planning a full replacement, or need routine inspection, we deliver free written estimates and transparent pricing.</p>
+
+      <section class="svc-hub-section" aria-labelledby="svc-popular-heading">
+        <div class="kicker">POPULAR</div>
+        <h2 id="svc-popular-heading">Flagship roofing services</h2>
+        <p class="section-lead">Roof replacement, repair, and storm damage work are our flagship lines. Each gets the same care: honest estimates, same-week scheduling when possible, and photo documentation so you own your project from start to finish.</p>
+        <div class="svc-priority-grid">
+          <a class="card svc-detail-card feature-card" href="service-1.html">
+            <span class="feature-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 10.5L12 4l9 6.5"/><path d="M9 21V12h6v9"/></svg></span>
+            <h3>Roof replacement</h3>
+            <p>Full tear-offs and re-roofs with manufacturer-backed systems, attic ventilation checks, and magnet sweep before we leave. We handle everything from asphalt shingles to metal standing seam, with written estimates and two-year labor warranty on every installation in Houston and nearby areas.</p>
+            <span class="feature-lm">Learn more</span>
+          </a>
+          <a class="card svc-detail-card feature-card" href="service-2.html">
+            <span class="feature-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16"/><path d="M6 7v11a2 2 0 002 2h8a2 2 0 002-2V7"/><path d="M9 7V5a1 1 0 011-1h4a1 1 0 011 1v2"/></svg></span>
+            <h3>Roof repair</h3>
+            <p>Leak tracing, shingle and flashing fixes, and emergency tarping when storms hit—photos for insurance when you need them. We locate the source, make lasting repairs, and document every step so you have clear records for your adjuster or next owner.</p>
+            <span class="feature-lm">Learn more</span>
+          </a>
+          <a class="card svc-detail-card feature-card" href="service-3.html">
+            <span class="feature-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+            <h3>Storm damage</h3>
+            <p>Hail and wind inspections, documentation for adjusters, and repair-or-replace guidance without pressure. We assess damage scope, explain coverage options, and help you make informed decisions about the best path forward for your Houston home.</p>
+            <span class="feature-lm">Learn more</span>
+          </a>
+          <a class="card svc-detail-card feature-card" href="service-4.html">
+            <span class="feature-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18"/><path d="M4.5 10.5l7.5-7.5 7.5 7.5"/></svg></span>
+            <h3>Commercial roofing</h3>
+            <p>Low-slope repairs, protective coatings, and maintenance plans for retail centers and light industrial buildings. We understand commercial roof lifecycle and budget cycles.</p>
+            <span class="feature-lm">Learn more</span>
+          </a>
+          <a class="card svc-detail-card feature-card" href="service-5.html">
+            <span class="feature-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2"/></svg></span>
+            <h3>Gutters</h3>
+            <p>Seamless aluminum gutters, custom downspout routing, and leaf guards engineered for Texas downpours. Gutters protect your foundation and prevent water damage to siding and landscaping while completing your home's appearance.</p>
+            <span class="feature-lm">Learn more</span>
+          </a>
+          <a class="card svc-detail-card feature-card" href="service-6.html">
+            <span class="feature-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3v4a1 1 0 001 1h4"/><path d="M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z"/></svg></span>
+            <h3>Roof inspections</h3>
+            <p>Pre-listing, post-storm, and annual roof inspections with written photo reports. Know your roof's condition before issues become emergencies—peace of mind in one visit.</p>
+            <span class="feature-lm">Learn more</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="svc-hub-section" aria-labelledby="svc-core-heading">
+        <div class="kicker">EXTENDED SERVICES</div>
+        <h2 id="svc-core-heading">Additional roofing and home protection services</h2>
+        <p class="section-lead">Beyond our six core services, Houston Roofers offers specialized work to keep your home protected year-round. Attic ventilation, siding repair, emergency stabilization, and maintenance contracts round out our full-service roofing and home protection capabilities.</p>
+        <div class="svc-priority-grid">
+          <article class="card feature-card">
+            <span class="feature-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18"/><path d="M4.5 10.5l7.5-7.5 7.5 7.5"/></svg></span>
+            <h3>Attic ventilation</h3>
+            <p>Ridge vents and intake balance for hot-climate attics. Proper ventilation extends roof life, reduces attic heat buildup in summer, and prevents moisture condensation in winter.</p>
+            <a class="feature-lm" href="contact.html">Request scope</a>
+          </article>
+          <article class="card feature-card">
+            <span class="feature-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2"/></svg></span>
+            <h3>Siding repair</h3>
+            <p>Hardie board and vinyl siding patch work after storm hits. When wind or hail damages siding panels, we match materials and complete repairs to protect your home's weather seal.</p>
+            <a class="feature-lm" href="contact.html">Request scope</a>
+          </article>
+          <article class="card feature-card">
+            <span class="feature-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3v4a1 1 0 001 1h4"/><path d="M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z"/></svg></span>
+            <h3>Emergency board-up</h3>
+            <p>Temporary protective tarping and board-up after major wind or tree damage. Emergency stabilization prevents further water intrusion and damage while you coordinate permanent repairs.</p>
+            <a class="feature-lm" href="contact.html">Request scope</a>
+          </article>
+          <article class="card feature-card">
+            <span class="feature-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16"/><path d="M6 7v11a2 2 0 002 2h8a2 2 0 002-2V7"/><path d="M9 7V5a1 1 0 011-1h4a1 1 0 011 1v2"/></svg></span>
+            <h3>Maintenance plans</h3>
+            <p>Annual tune-ups and minor sealant touch-ups to keep your roof and systems in peak condition. Preventive maintenance catches small issues before they become expensive emergencies.</p>
+            <a class="feature-lm" href="contact.html">Request scope</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="svc-add-more" aria-labelledby="additional-services-heading">
+        <div class="kicker">Additional services</div>
+        <h2 class="svc-more-h2" id="additional-services-heading">Other work we handle</h2>
+        <p class="lead">Beyond our core roofing and gutter services, we handle skylights, chimney flashing, and attic insulation assessments. These complementary work items often emerge during inspections or storm evaluations—let us know if you'd like them reviewed during your free estimate visit.</p>
+        <ul class="svc-additional-list">
+          <ul><li>Skylights and roof penetrations</li><li>Chimney flashing and sealing</li><li>Attic insulation and ventilation checks</li></ul>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <div class="sticky-svc-cta" role="region" aria-label="Quick estimate">
+    <a class="sticky-svc-primary" href="contact.html">Get free estimate</a>
+    <a class="sticky-svc-call" href="tel:+17135550198">Call (713) 555-0198</a>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Houston Roofers<span>.</span></div>
+        <p style="max-width:340px;line-height:1.65">Professional roofing repair, replacement, and storm damage restoration across Houston and nearby communities.</p>
+        <p style="margin-top:.65rem;font-size:.85rem;line-height:1.6;color:rgba(255,255,255,.55)">Mon–Fri 7:30am–5pm · Sat 8am–12pm · Closed Sun</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="articles.html">Articles</a></li>
+          <li><a href="service-area.html">Service Area</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+17135550198">(713) 555-0198</a></li>
+          <li><a href="mailto:maria.garcia.houstonroofers.example@gmail.com">maria.garcia.houstonroofers.example@gmail.com</a></li>
+          <li><a href="contact.html">Request a Quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Houston Roofers.</span>
+      <span>Houston, TX · Licensed & insured · TX #12345</span>
+    </div>
+  </footer>
+  <script src="./main.js" defer></script>
+</body>
+</html>
+
